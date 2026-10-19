@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@/components/ui/Img";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { statusLabel, type Property } from "@/lib/data/properties";
