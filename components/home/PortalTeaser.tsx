@@ -69,7 +69,7 @@ export function PortalTeaser() {
             <SectionHeading
               eyebrow="Het klantportaal"
               title="Altijd inzicht in uw rendement."
-              lead="Uitkeringen, indexeringen en taxaties per pand. Glashelder inzicht in uw eigen vastgoedportfolio."
+              lead="Na uw investering wordt het rendement van uw Briks visueel weergegeven in uw persoonlijke portaal. U ziet wanneer u wordt uitbetaald, hoe huurindexeringen doorwerken en hoe uw portefeuille zich ontwikkelt. Glashelder inzicht in uw eigen vastgoedportfolio."
             />
             <Button href="/inloggen/#registreren" variant="ink" arrow className="mt-10">
               Vrijblijvend registreren

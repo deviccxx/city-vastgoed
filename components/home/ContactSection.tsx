@@ -14,7 +14,7 @@ export function ContactSection({ id = "contact" }: { id?: string }) {
               light
               eyebrow="Persoonlijk contact"
               title="Liever eerst een gesprek?"
-              lead="Aanbod, voorwaarden en risico's lichten wij graag persoonlijk toe."
+              lead="Wij lichten het aanbod, de voorwaarden en de risico's graag persoonlijk toe. Bel, mail of plan direct een belafspraak."
             />
             <dl className="mt-12 space-y-8 border-t border-cream/15 pt-10">
               <div>

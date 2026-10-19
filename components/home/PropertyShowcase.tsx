@@ -14,7 +14,7 @@ export function PropertyShowcase() {
           <SectionHeading
             eyebrow="Het aanbod"
             title="In tien minuten vastgoedinvesteerder."
-            lead="Gerenoveerd, energiezuinig en verhuurklaar voordat het op het platform verschijnt."
+            lead="Elk pand is gerenoveerd, energiezuinig en verhuurklaar voordat het op het platform verschijnt. U kiest het pand, het aantal Briks, en ontvangt vanaf de eerste maand."
           />
           <Button href="/aanbod/" variant="outline-dark" arrow className="shrink-0">
             Alle panden

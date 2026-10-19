@@ -1,49 +1,33 @@
-import { Landmark, FileCheck, PiggyBank, Leaf } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
-
-const safeguards = [
-  {
-    icon: Landmark,
-    title: "Eigen B.V. per pand",
-    text: "Huurcontracten, hypotheek en uw inleg zijn per pand gescheiden.",
-  },
-  {
-    icon: FileCheck,
-    title: "Onafhankelijke taxatie",
-    text: "Elke twee jaar een officieel taxatierapport van uw panden.",
-  },
-  {
-    icon: PiggyBank,
-    title: "Geldreserve per pand",
-    text: "Een buffer vangt tijdelijke leegstand of wanbetaling op.",
-  },
-  {
-    icon: Leaf,
-    title: "Energielabel A+ / A++",
-    text: "Toekomstbestendige woningen met lage lasten voor huurders.",
-  },
-];
+import { Stat } from "@/components/ui/Stat";
+import { site } from "@/lib/data/site";
+import { eur } from "@/lib/format";
 
 export function Responsibility() {
   return (
     <Section tone="ink" id="afm">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-7">
             <SectionHeading
               light
-              eyebrow="Zekerheid"
-              title="Zo beschermen wij uw inleg."
-              titleSize="md"
-              lead="Beleggen brengt risico met zich mee. Daarom bouwen wij per pand zekerheden in en communiceren wij uitsluitend over verwachte en gerealiseerde cijfers."
+              eyebrow="Verantwoordelijkheid"
+              title="Wij kennen onze verantwoordelijkheid."
+              lead="City Vastgoed werkt met uw vermogen en is zich daarvan bewust. Ook bij deze vorm van beleggen loopt u risico: huurinkomsten kunnen tegenvallen en de waarde van vastgoed kan dalen. Daar staat tegenover dat Nederlands woonvastgoed historisch een stabiel rendement laat zien in vergelijking met sparen of aandelen."
             />
-            <p className="mt-6 text-[0.8125rem] leading-relaxed text-cream/45">
-              City Vastgoed valt niet onder toezicht van de AFM; er geldt een vrijstelling van de
-              prospectusplicht. Beleg uitsluitend met vermogen dat u langere tijd kunt missen.
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-cream/70 md:text-lg">
+              Wij bieden obligaties in de vorm van Briks. Uw inleg wordt, samen
+              met die van andere investeerders, ingezet voor de aankoop, bouw en
+              renovatie van woonpanden in Nederland. Elk pand is ondergebracht in
+              een afzonderlijke vennootschap, zodat resultaten gescheiden blijven.
+            </p>
+            <p className="mt-6 max-w-3xl text-[0.875rem] leading-relaxed text-cream/50">
+              City Vastgoed valt niet onder toezicht van de AFM. Er geldt een
+              vrijstelling van de prospectusplicht. Beleg uitsluitend met vermogen
+              dat u voor langere tijd kunt missen.
             </p>
             <Button
               href="/veelgestelde-vragen/werkwijze-en-verdienmodel-van-city-vastgoed/"
@@ -55,18 +39,11 @@ export function Responsibility() {
             </Button>
           </div>
 
-          <div className="grid gap-px bg-cream/10 sm:grid-cols-2 lg:col-span-7">
-            {safeguards.map((s, i) => (
-              <Reveal key={s.title} delay={i * 100}>
-                <div className="h-full bg-ink p-8">
-                  <span className="icon-tile">
-                    <s.icon className="h-5 w-5" strokeWidth={1.25} />
-                  </span>
-                  <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
-                  <p className="mt-2 text-[0.875rem] leading-relaxed text-cream/60">{s.text}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 self-center border-l border-cream/15 pl-10 lg:col-span-5 lg:pl-16">
+            <Stat light value={eur(site.keyFacts.brikPrice)} label="Per Brik" />
+            <Stat light value={`${site.keyFacts.termYears} jaar`} label="Looptijd" />
+            <Stat light value="100%" label="Nederlands vastgoed" />
+            <Stat light value="A+ / A++" label="Energielabel" />
           </div>
         </div>
       </Container>

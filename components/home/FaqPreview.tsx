@@ -15,7 +15,7 @@ export function FaqPreview() {
               eyebrow="Veelgestelde vragen"
               title="Helder over hoe het werkt."
               titleSize="md"
-              lead="De vragen die wij het meest ontvangen. Staat de uwe er niet bij? Wij lichten het graag persoonlijk toe."
+              lead="De antwoorden op de vragen die wij het meest ontvangen. Staat uw vraag er niet bij? Wij lichten het graag persoonlijk toe."
             />
             <Button href="/veelgestelde-vragen/" variant="outline-dark" arrow className="mt-8">
               Alle vragen

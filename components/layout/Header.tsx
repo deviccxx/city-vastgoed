@@ -43,17 +43,17 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-cream/92 text-ink backdrop-blur-md transition-[border-color,box-shadow] duration-500",
-        scrolled ? "border-gold/40 shadow-[0_10px_30px_-20px_rgba(14,20,32,0.35)]" : "border-stone",
+        "sticky top-0 z-50 bg-ink text-cream transition-shadow duration-500",
+        scrolled && "shadow-[0_1px_0_0_rgba(184,154,90,0.35)]",
       )}
     >
       <Container
         className={cn(
           "flex items-center justify-between transition-[padding] duration-500",
-          scrolled ? "py-3.5" : "py-5",
+          scrolled ? "py-4" : "py-6",
         )}
       >
-        <Logo light={false} />
+        <Logo />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Hoofdmenu">
@@ -63,8 +63,8 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1.5 py-2 text-[0.8125rem] tracking-wide text-ink/70 transition-colors hover:text-ink",
-                    isActive(item.href) && "text-ink",
+                    "flex items-center gap-1.5 py-2 text-[0.8125rem] tracking-wide text-cream/80 transition-colors hover:text-cream",
+                    isActive(item.href) && "text-cream",
                   )}
                 >
                   {item.label}
@@ -74,12 +74,12 @@ export function Header() {
                   />
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                  <div className="border border-stone-2 bg-cream p-2 shadow-[0_20px_40px_-24px_rgba(14,20,32,0.4)]">
+                  <div className="border border-gold/30 bg-ink-2 p-2">
                     {item.children.map((c) => (
                       <Link
                         key={c.href}
                         href={c.href}
-                        className="block px-4 py-3 text-[0.8125rem] text-ink/75 transition-colors hover:bg-white hover:text-ink"
+                        className="block px-4 py-3 text-[0.8125rem] text-cream/80 transition-colors hover:bg-ink-3 hover:text-gold-2"
                       >
                         {c.label}
                       </Link>
@@ -92,8 +92,8 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  "py-2 text-[0.8125rem] tracking-wide text-ink/70 transition-colors hover:text-ink",
-                  isActive(item.href) && "text-ink",
+                  "py-2 text-[0.8125rem] tracking-wide text-cream/80 transition-colors hover:text-cream",
+                  isActive(item.href) && "text-cream",
                 )}
               >
                 {item.label}
@@ -105,13 +105,13 @@ export function Header() {
         <div className="hidden items-center gap-7 lg:flex">
           <Link
             href="/inloggen/"
-            className="link-gold text-[0.75rem] uppercase tracking-[0.16em] text-ink/70 hover:text-ink"
+            className="link-gold text-[0.75rem] uppercase tracking-[0.16em] text-cream/80 hover:text-cream"
           >
             Inloggen
           </Link>
           <Link
             href="/inloggen/#registreren"
-            className="bg-ink px-5 py-2.5 text-[0.75rem] uppercase tracking-[0.16em] text-cream transition-colors duration-300 hover:bg-gold hover:text-ink"
+            className="border border-gold px-5 py-2.5 text-[0.75rem] uppercase tracking-[0.16em] text-gold-2 transition-colors duration-300 hover:bg-gold hover:text-ink"
           >
             Registreren
           </Link>
@@ -136,20 +136,27 @@ export function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 top-[65px] z-40 overflow-y-auto bg-cream transition-opacity duration-300 lg:hidden",
+          "fixed inset-x-0 bottom-0 top-[73px] z-40 overflow-y-auto bg-ink transition-opacity duration-300 lg:hidden",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
         <Container className="flex flex-col py-8">
           {nav.map((item) => (
-            <div key={item.label} className="border-b border-stone-2 py-5">
-              <Link href={item.href} className="font-display text-2xl text-ink">
+            <div key={item.label} className="border-b border-cream/10 py-5">
+              <Link
+                href={item.href}
+                className="font-display text-2xl text-cream"
+              >
                 {item.label}
               </Link>
               {item.children && (
                 <div className="mt-3 flex flex-col gap-2.5 pl-1">
                   {item.children.map((c) => (
-                    <Link key={c.href} href={c.href} className="text-[0.875rem] text-ink/60">
+                    <Link
+                      key={c.href}
+                      href={c.href}
+                      className="text-[0.875rem] text-cream/65"
+                    >
                       {c.label}
                     </Link>
                   ))}
@@ -160,13 +167,13 @@ export function Header() {
           <div className="mt-8 flex flex-col gap-4">
             <Link
               href="/inloggen/#registreren"
-              className="bg-ink py-4 text-center text-[0.75rem] uppercase tracking-[0.16em] text-cream"
+              className="border border-gold py-4 text-center text-[0.75rem] uppercase tracking-[0.16em] text-gold-2"
             >
               Registreren
             </Link>
             <Link
               href="/inloggen/"
-              className="py-2 text-center text-[0.75rem] uppercase tracking-[0.16em] text-ink/70"
+              className="py-2 text-center text-[0.75rem] uppercase tracking-[0.16em] text-cream/80"
             >
               Inloggen
             </Link>

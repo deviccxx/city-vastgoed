@@ -1,4 +1,3 @@
-import { UserPlus, Building2, CalendarCheck, TrendingUp } from "lucide-react";
 import { Image } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -7,55 +6,63 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
-  { icon: UserPlus, title: "Registreer", text: "Vrijblijvend, in enkele minuten.", meta: "Dag 1" },
-  { icon: Building2, title: "Kies uw Briks", text: "Per pand, vanaf € 500. Spreid naar wens.", meta: "Dag 1" },
-  { icon: CalendarCheck, title: "Ontvang maandelijks", text: "Uw aandeel in de netto huur, automatisch.", meta: "Elke maand" },
-  { icon: TrendingUp, title: "Deel in de waarde", text: "Na vijf jaar: inleg terug plus waardeontwikkeling.", meta: "Jaar 5" },
+  {
+    n: "01",
+    title: "Registreer",
+    text: "Maak vrijblijvend een account aan. Binnen enkele minuten heeft u toegang tot het volledige aanbod en de financiële overzichten per pand.",
+  },
+  {
+    n: "02",
+    title: "Kies uw Briks",
+    text: "Selecteer een pand en het aantal Briks van € 500. Spreid desgewenst over meerdere panden en steden.",
+  },
+  {
+    n: "03",
+    title: "Ontvang maandelijks",
+    text: "Vanaf de eerste maand ontvangt u uw aandeel in de netto huurinkomsten. Na vijf jaar deelt u in de waardeontwikkeling.",
+  },
 ];
 
 export function PlatformIntro() {
   return (
-    <Section tone="cream-2" className="overflow-hidden">
+    <Section tone="white" className="overflow-hidden">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-12">
+        <div className="grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionHeading
-              eyebrow="Hoe het werkt"
-              title="Van registratie tot rendement in vier stappen."
-              titleSize="md"
-              lead="Wij kopen aan, renoveren en verhuren. U volgt uw portefeuille in uw persoonlijke portaal."
+              eyebrow="Het platform"
+              title="Hét online platform voor investeren in vastgoed."
+              lead="Beleggen in vastgoed via Briks is profiteren van een goed renderende vastgoedmarkt, zonder de lasten die erbij komen kijken. Wij kopen aan, verzorgen het onderhoud en onderhouden de relatie met huurders. U volgt uw portefeuille en uitbetalingen in uw persoonlijke portaal."
             />
             <Button href="/beleggen-in-vastgoedobligaties/" variant="ink" arrow className="mt-10">
               Lees er alles over
             </Button>
           </div>
+
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="img-zoom relative aspect-[16/10] overflow-hidden">
-                <Image src="/images/facade.jpg" alt="Gevel van een gerenoveerd woonpand" fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
+              <div className="img-zoom relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/facade.jpg"
+                  alt="Gevel van een gerenoveerd woonpand"
+                  fill
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>
         </div>
 
-        {/* Timeline */}
-        <ol className="relative mt-20 grid gap-10 md:grid-cols-4 md:gap-8">
-          <div className="absolute left-6 top-6 hidden h-px w-[calc(100%-3rem)] bg-gold/40 md:block" />
+        <div className="mt-24 grid gap-10 border-t border-stone pt-14 md:grid-cols-3">
           {steps.map((s, i) => (
-            <Reveal key={s.title} delay={i * 120} as="li">
-              <div className="relative">
-                <span className="icon-tile bg-cream-2">
-                  <s.icon className="h-5 w-5" strokeWidth={1.25} />
-                </span>
-                <p className="eyebrow mt-6">
-                  0{i + 1} · {s.meta}
-                </p>
-                <h3 className="mt-2 font-display text-2xl">{s.title}</h3>
-                <p className="mt-2 text-[0.9rem] leading-relaxed text-muted">{s.text}</p>
-              </div>
+            <Reveal key={s.n} delay={i * 120}>
+              <p className="font-display text-5xl text-gold">{s.n}</p>
+              <h3 className="mt-5 font-display text-2xl">{s.title}</h3>
+              <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted">{s.text}</p>
             </Reveal>
           ))}
-        </ol>
+        </div>
       </Container>
     </Section>
   );
