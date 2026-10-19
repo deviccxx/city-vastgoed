@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/data/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
+import { legalEntity } from "@/lib/data/trust";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -14,9 +15,12 @@ export function Footer() {
           <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-cream/60">
             {site.description}
           </p>
-          <p className="mt-6 text-[0.6875rem] uppercase tracking-[0.16em] text-cream/40">
-            KvK {site.contact.kvk}
-          </p>
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-[0.6875rem] text-cream/45">
+            <div><dt className="uppercase tracking-[0.14em] text-cream/35">Statutaire naam</dt><dd>{legalEntity.statutoryName}</dd></div>
+            <div><dt className="uppercase tracking-[0.14em] text-cream/35">KvK · BTW</dt><dd className="tnum">{legalEntity.kvk} · {legalEntity.vat}</dd></div>
+            <div><dt className="uppercase tracking-[0.14em] text-cream/35">Bestuurders</dt><dd>{legalEntity.directors.join(", ")}</dd></div>
+            <div><dt className="uppercase tracking-[0.14em] text-cream/35">Toezicht</dt><dd>Stichting Obligatiehouders CV</dd></div>
+          </dl>
         </div>
 
         <div className="md:col-span-2">

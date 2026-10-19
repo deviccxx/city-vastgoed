@@ -29,14 +29,17 @@ export function Responsibility() {
               vrijstelling van de prospectusplicht. Beleg uitsluitend met vermogen
               dat u voor langere tijd kunt missen.
             </p>
-            <Button
-              href="/veelgestelde-vragen/werkwijze-en-verdienmodel-van-city-vastgoed/"
-              variant="outline-light"
-              arrow
-              className="mt-10"
-            >
-              Onze werkwijze
-            </Button>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="/risicos/" variant="gold" arrow>
+                Alle risico&apos;s met rekenvoorbeelden
+              </Button>
+              <Button
+                href="/veelgestelde-vragen/werkwijze-en-verdienmodel-van-city-vastgoed/"
+                variant="outline-light"
+              >
+                Onze werkwijze
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-12 self-center border-l border-cream/15 pl-10 lg:col-span-5 lg:pl-16">

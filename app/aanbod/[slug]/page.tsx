@@ -16,6 +16,10 @@ import { ContactSection } from "@/components/home/ContactSection";
 import { Button } from "@/components/ui/Button";
 import { getProperty, properties, statusLabel } from "@/lib/data/properties";
 import { faqCategories } from "@/lib/data/faq";
+import { getPropertyRecord } from "@/lib/data/trust";
+import { PropertyRecordCard } from "@/components/trust/TrackRecordTable";
+import { DocumentList } from "@/components/trust/DocumentList";
+import { DummyNote } from "@/components/trust/DummyNote";
 import { eur, m2, num, pct } from "@/lib/format";
 
 export function generateStaticParams() {
@@ -46,6 +50,7 @@ export default async function PropertyPage({ params }: PageProps<"/aanbod/[slug]
 
   const others = properties.filter((o) => o.slug !== p.slug).slice(0, 2);
   const ret = p.realizedReturnPct ?? p.expectedReturnPct ?? 0;
+  const record = getPropertyRecord(p.slug);
 
   return (
     <>
@@ -213,6 +218,36 @@ export default async function PropertyPage({ params }: PageProps<"/aanbod/[slug]
           </Container>
         </Section>
       )}
+
+      {/* Trackrecord + documenten */}
+      <Section tone="cream-2">
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-12">
+            <div className={record ? "lg:col-span-7" : "lg:col-span-5"}>
+              {record ? (
+                <>
+                  <div className="mb-8 flex items-center gap-4">
+                    <Eyebrow>Gerealiseerd</Eyebrow>
+                    <DummyNote />
+                  </div>
+                  <PropertyRecordCard record={record} />
+                </>
+              ) : (
+                <SectionHeading
+                  eyebrow="Zekerheden"
+                  title="Eigen B.V., onafhankelijke taxatie, geldreserve."
+                  titleSize="md"
+                  lead="Dit pand is ondergebracht in een eigen vennootschap. Een onafhankelijke stichting bewaakt de belangen van obligatiehouders."
+                />
+              )}
+            </div>
+            <div className={record ? "lg:col-span-4 lg:col-start-9" : "lg:col-span-6 lg:col-start-7"}>
+              <p className="eyebrow mb-5">Documenten</p>
+              <DocumentList />
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       {/* FAQ */}
       <Section tone="white">

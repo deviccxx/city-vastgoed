@@ -1,7 +1,8 @@
 import { Hero } from "@/components/home/Hero";
+import { TrustBar } from "@/components/trust/TrustBar";
 import { UspRow } from "@/components/home/UspRow";
 import { PropertyShowcase } from "@/components/home/PropertyShowcase";
-import { PlatformIntro } from "@/components/home/PlatformIntro";
+import { TrackRecordPreview, StructurePreview, TeamPreview, ProcessPreview } from "@/components/home/TrustSections";
 import { Responsibility } from "@/components/home/Responsibility";
 import { PortalTeaser } from "@/components/home/PortalTeaser";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -13,10 +14,14 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <UspRow />
       <PropertyShowcase />
-      <PlatformIntro />
+      <TrackRecordPreview />
+      <StructurePreview />
+      <TeamPreview />
       <Responsibility />
+      <ProcessPreview />
       <PortalTeaser />
       <Testimonials />
       <FaqPreview />

@@ -14,7 +14,16 @@ export const site = {
   nav: {
     main: [
       { label: "Home", href: "/" },
-      { label: "Over City Vastgoed", href: "/over-city-vastgoed/" },
+      {
+        label: "Over ons",
+        href: "/over-city-vastgoed/",
+        children: [
+          { label: "Over City Vastgoed", href: "/over-city-vastgoed/" },
+          { label: "Team en partners", href: "/team/" },
+          { label: "Trackrecord", href: "/trackrecord/" },
+          { label: "Juridische structuur", href: "/juridische-structuur/" },
+        ],
+      },
       {
         label: "Aanbod",
         href: "/aanbod/",
@@ -36,6 +45,8 @@ export const site = {
             label: "Online beleggen in vastgoed",
             href: "/online-beleggen-in-vastgoed/",
           },
+          { label: "Zo werkt investeren", href: "/zo-werkt-het/" },
+          { label: "Risico's", href: "/risicos/" },
           { label: "Veelgestelde vragen", href: "/veelgestelde-vragen/" },
           { label: "Artikelen", href: "/artikelen/" },
         ],
