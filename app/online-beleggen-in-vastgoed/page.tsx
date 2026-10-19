@@ -40,7 +40,7 @@ export default function OnlineBeleggenPage() {
       <PageHero
         eyebrow="Online beleggen in vastgoed"
         title="Investeren zonder zorgen. Inzicht zonder moeite."
-        lead="Vastgoed wordt al decennia gezien als een stabiele belegging met een aantrekkelijk jaarrendement. City Vastgoed maakt het toegankelijk: u investeert online in gerenoveerde, verhuurde woonpanden en volgt alles in uw persoonlijke portaal."
+        lead="Investeer online in gerenoveerde, verhuurde woonpanden en volg alles in uw persoonlijke portaal."
         image="/images/interior.jpg"
       />
 
@@ -73,7 +73,7 @@ export default function OnlineBeleggenPage() {
                 eyebrow="Het rendement"
                 title="Twee bronnen van rendement."
                 titleSize="md"
-                lead="Wij investeren in panden die worden gerenoveerd of herontwikkeld tot huurwoningen. Zodra het pand verhuurd is, ontvangt u maandelijks uw aandeel in de netto huur. Na de looptijd van vijf jaar deelt u in de waardeontwikkeling, vastgesteld door een onafhankelijke taxateur."
+                lead="Maandelijks uw aandeel in de netto huur. Na vijf jaar de waardeontwikkeling, vastgesteld door een onafhankelijke taxateur."
               />
               <p className="mt-6 max-w-2xl text-[0.9375rem] leading-relaxed text-cream/55">
                 Op basis van de huidige panden projecteren wij een totaalrendement

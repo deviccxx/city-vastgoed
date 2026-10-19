@@ -21,7 +21,7 @@ export default function AanbodPage() {
       <PageHero
         eyebrow="Het aanbod"
         title="Zorgvuldig geselecteerd. Volledig verhuurklaar."
-        lead="Elk pand op het platform is gerenoveerd tot energiezuinige woningen en wordt pas aangeboden zodra het gereed is voor verhuur. Om te investeren maakt u eerst vrijblijvend een account aan."
+        lead="Gerenoveerd tot energiezuinige woningen en pas aangeboden zodra het verhuurklaar is."
         image="/images/skyline.jpg"
       >
         <p className="mt-8 text-[0.8125rem] text-cream/60">

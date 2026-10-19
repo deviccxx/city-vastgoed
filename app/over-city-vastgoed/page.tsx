@@ -30,7 +30,7 @@ export default function OverPage() {
       <PageHero
         eyebrow="Over City Vastgoed"
         title="Een platform gebouwd op ervaring en lange termijn."
-        lead="City Vastgoed is een online beleggingsplatform waar particuliere en zakelijke investeerders via vastgoedobligaties, Briks, investeren in Nederlands woonvastgoed. Wij kopen panden aan, renoveren ze tot energiezuinige woningen en verhuren ze."
+        lead="Online beleggen in Nederlands woonvastgoed via Briks. Wij kopen aan, renoveren energiezuinig en verhuren."
         image="/images/facade.jpg"
       />
 
@@ -42,14 +42,8 @@ export default function OverPage() {
                 eyebrow="Zorgeloos investeren"
                 title="Wij nemen de zorgen uit handen."
                 titleSize="md"
-                lead="Huurdersselectie, reparaties, verzekeringen, onvoorziene kosten: het is ons werk, niet het uwe. Zodra de units in een pand gereed zijn voor verhuur, bieden wij het aan op het platform. In uw portaal ziet u uw inleg, het verwachte en behaalde rendement per pand en al uw transacties."
+                lead="Huurdersselectie, reparaties, verzekeringen, onvoorziene kosten: het is ons werk, niet het uwe. In uw portaal ziet u uw inleg, rendement per pand en al uw transacties."
               />
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-                Transparantie en wet- en regelgeving staan voorop. Rendementen zijn
-                niet gegarandeerd en kunnen variëren; daarom communiceren wij
-                uitsluitend over verwachte en gerealiseerde cijfers, onderbouwd
-                met onafhankelijke taxaties.
-              </p>
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
               <Reveal>
